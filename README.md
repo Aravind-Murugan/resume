@@ -26,30 +26,31 @@ ______
 
 To run this project locally, follow these steps:
 
-1. **Git Command**:
-    i. **Clone the repository**:
-        ```bash
-        git clone https://github.com/Aravind-Murugan/resume.git
-        cd resume
-    ii. **Git user.name list**:
-        ```bash
-        git config user.name
-    iii. **Git user.email list**:
-        ```bash
-        git config user.email
+### Git Command:
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/Aravind-Murugan/resume.git
+    cd resume
+2. **Git user.name list**:
+    ```bash
+    git config user.name
+3. **Git user.email list**:
+    ```bash
+    git config user.email
 
-2. **Docker Commands**:
-    i. **Docker-Deployment**:
-        ```bash
-        docker compose -f '.\docker-compose.yml' up -d --build mysql_database adminer
-    ii. **Docker-inspect-IPAddress (mysql-db-container)**:
-        ```bash
-        docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql-db-container
-    iii. **To test the MySQL inside the Docker Container**:
-        ```bash
-        docker exec -it mysql-db-container mysql -u dbuser -pMySQL-dbUser@01Apr2025
+### Docker Commands:
+1. **Docker-Deployment**:
+    ```bash
+    docker compose -f '.\docker-compose.yml' up -d --build mysql_database adminer
+2. **Docker-inspect-IPAddress (mysql-db-container)**:
+    ```bash
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql-db-container
+3. **To test the MySQL inside the Docker Container**:
+    ```bash
+    docker exec -it mysql-db-container mysql -u dbuser -pMySQL-dbUser@01Apr2025
 
-3. **Install dependencies:**
+### NodeJS Commands:
+1. **Install dependencies**:
     ```bash
     cd frontend/
     npm install
@@ -57,7 +58,7 @@ To run this project locally, follow these steps:
     cd backend/
     npm install
 
-4. **Start the server**
+2. **Start the server**:
     ```bash
     npm start
 
