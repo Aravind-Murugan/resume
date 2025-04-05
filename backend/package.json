@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "description": "This project is been developed to host my-resume website backend sever code...",
+  "env-file": "./.ENV",
+  "author": {
+    "name": "Aravind-M",
+    "email": "aravind.m.mail@gmail.com",
+    "url": "https://Aravind-Murugan.github.io/resume"
+  },
+  "keywords": [
+    "Aravind-Murugan/resume",
+    "backend",
+    "NodeJS",
+    "MailServer",
+    "MySQL-ServerSide"
+  ],
+  "version": "1.0.0",
+  "license": "Own-GitHub-License",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.9",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

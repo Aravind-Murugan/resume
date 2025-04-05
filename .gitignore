@@ -3,7 +3,12 @@
 temp/
 test/
 Docker/
+node_modules/
+
 
 # Files(s) to be ignored while push (or) upload to the Git repository from local-repository
-How to Host a React App on GitHub.docx
+.ENV
+notes.txt
 secrets.Env
+package-lock.json
+How to Host a React App on GitHub.docx
