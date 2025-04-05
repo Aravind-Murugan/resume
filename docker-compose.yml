@@ -1,0 +1,43 @@
+
+# =========================================================================================================================================================
+  #--- File-Name:  docker-compose.yml
+  #--- Author:     Aravind-M
+# =========================================================================================================================================================
+# 
+# The provided code snippet is a configuration file written in YAML format for a Docker Compose setup. Here's a breakdown of what it does:
+# 
+version: '3.8'
+name: Aravind_resume
+services:
+  # #--- MySQL-DataBase: The `database` section in the `docker-compose.yml` file is defining a service named `database` for a MySQL database container. EXECUTION-COMMAND: "docker compose -f '.\docker-compose.yml' up -d --build database"
+  mysql_database:
+    container_name: mysql-db-container
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile.mysql
+    volumes:
+      - dataBase_Data_Volume:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - bridge_network
+    restart: on-failure:5
+  # #--- DataBase-Viewer: The `adminer` section in the `docker-compose.yml` file is defining a service named `adminer` for a database viewer tool called Adminer. EXECUTION: "docker compose -f 'my-resume\docker-compose.yml' up -d --build 'adminer'"
+  adminer:
+    container_name: adminer-dark-container
+    depends_on:
+      - mysql_database
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile.adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - bridge_network
+    restart: on-failure:5
+#--- The `networks` section in a Docker Compose file allows you to define custom networks for your services. In this case, the `networks` section is defining a network named `bridge_network` with the driver set to `bridge`.
+networks:
+  bridge_network:
+#--- The `volumes` section in the Docker Compose configuration file is defining a named volume called `dataBase_Data_Volume`. This named volume is used to persist the data stored in the MySQL database container. By specifying this volume, the data stored in the `/var/lib/mysql` directory within the MySQL container will be stored persistently even if the container is stopped or removed. This helps in maintaining the data integrity and allows for easy data management in a Dockerized environment.
+volumes:
+  dataBase_Data_Volume:

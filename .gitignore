@@ -1,0 +1,9 @@
+
+# Folder(s) to be ignored while push (or) upload to the Git repository from local-repository
+temp/
+test/
+Docker/
+
+# Files(s) to be ignored while push (or) upload to the Git repository from local-repository
+How to Host a React App on GitHub.docx
+secrets.Env
